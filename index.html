@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting to Lashier Artwork Upload...</title>
+  <script>
+    // Combine "?order=SO" + "#34328", strip "SO#", and redirect cleanly to Google Apps Script
+    const params = new URLSearchParams(window.location.search);
+    const raw = (params.get('order') || '') + window.location.hash;
+    const cleanOrder = raw.replace(/^SO#?\s*/i, '').trim();
+    const target = 'https://script.google.com/macros/s/AKfycbyWlpSEgpvexv8ZLME9Z0-YcD9tzpySZ31G7A-9j2ZaQy28vTyVOnkLRAHRjZOCCmE/exec?order=' + encodeURIComponent(cleanOrder);
+    window.location.replace(target);
+  </script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 60px; color: #555;">
+  Redirecting to Lashier Artwork Upload...
+</body>
+</html>
